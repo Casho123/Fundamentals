@@ -27,11 +27,26 @@ public class Problem9 {
                     arr[second] = temp;
                     break;
                 case "multiply":
-
+                    first = Integer.parseInt(elements[1]);
+                    second = Integer.parseInt(elements[2]);
+                    int current = arr[first] * arr[second];
+                    arr[first] = current;
                     break;
                 case "decrease":
+                    for (int i = 0; i < arr.length; i++) {
+                        arr[i] -= 1;
+
+                    }
                     break;
             }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (i < arr.length-1) {
+                System.out.print(arr[i] + ", ");
+            } else {
+                System.out.print(arr[i]);
+            }
+
         }
 
     }
