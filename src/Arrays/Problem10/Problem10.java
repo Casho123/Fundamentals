@@ -36,13 +36,14 @@ public class Problem10 {
                     int index = Integer.parseInt(elements[1]);
                     if (index >= 0 && index < chest.length) {
                         String temp = chest[index];
-                        chest[index] = chest[chest.length-1];
+                        for (int i = index; i < chest.length-1; i++) {
+                            chest[i] = chest[i+1];
+                        }
                         chest[chest.length-1] = temp;
-
-
                     }
                     break;
                 case "Steal":
+
                     break;
             }
 
