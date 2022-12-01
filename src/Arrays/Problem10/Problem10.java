@@ -43,12 +43,40 @@ public class Problem10 {
                     }
                     break;
                 case "Steal":
+                    int count = Integer.parseInt(elements[1]);
+                    if (count >= chest.length) {
+                        for (int i = 0; i < chest.length; i++) {
+                            if (i < chest.length-1) {
+                                System.out.print(chest[i] + ", ");
+                            } else {
+                                System.out.println(chest[i]);
+                            }
+                            chest[i] = "";
+                        }
+                    } else {
+                        for (int i = chest.length-count; i < chest.length ; i++) {
+                            if (i < chest.length-1) {
+                                System.out.print(chest[i] + ", ");
+                            } else {
+                                System.out.println(chest[i]);
+                            }
+                            chest[i] = "";
 
+                        }
+                    }
+                    String currentChest = String.join(" ", chest);
+                    chest = currentChest.split("\\s+");
                     break;
             }
-
         }
 
+        String itemsLength = String.join("", chest);
+        if (chest.length == 0) {
+            System.out.println("Failed treasure hunt.");
+        } else {
+            double averageLoot = 1.0 * itemsLength.length()/chest.length;
+            System.out.printf("Average treasure gain: %.2f pirate credits.", averageLoot);
 
+        }
     }
 }
