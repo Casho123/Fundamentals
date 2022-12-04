@@ -12,7 +12,6 @@ public class Problem2 {
 
 
     }
-
     public static void vowelsCount(String word) {
         int counter = 0;
         String vowels = "aoueiyAOUEIY";
@@ -23,7 +22,6 @@ public class Problem2 {
             }
 
         }
-
         System.out.println(counter);
     }
 }
