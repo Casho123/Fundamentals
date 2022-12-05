@@ -18,7 +18,7 @@ public class Problem10 {
     }
 
     public static int[] isDivisibleBy8(int number) {
-        String numbers = "";
+        StringBuilder numbers = new StringBuilder();
         for (int i = 10; i <= number; i++) {
             int sum = 0;
             String current = i + "";
@@ -26,10 +26,10 @@ public class Problem10 {
                 sum += Integer.parseInt(current.charAt(j) +"");
             }
             if (sum % 8 == 0) {
-                numbers += i + " ";
+                numbers.append(i).append(" ");
             }
         }
-        return Arrays.stream(numbers.split("\\s+")).mapToInt(Integer::parseInt).toArray();
+        return Arrays.stream(numbers.toString().split("\\s+")).mapToInt(Integer::parseInt).toArray();
 
     }
     public static boolean hasOneDigit(int number) {
