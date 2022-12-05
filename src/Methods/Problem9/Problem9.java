@@ -1,4 +1,4 @@
-package Methods;
+package Methods.Problem9;
 
 import java.util.Scanner;
 
