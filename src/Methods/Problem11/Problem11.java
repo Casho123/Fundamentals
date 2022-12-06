@@ -20,7 +20,7 @@ public class Problem11 {
             switch (command) {
 
                 case "exchange":
-                    int index = Integer.parseInt(elements[1]);
+                    int index = Integer.parseInt(elements[1]) + 1;
                     exchange(arr, index);
                     break;
                 case "max":
@@ -201,7 +201,7 @@ public class Problem11 {
 
     public static void exchange(int[] arr, int index) {
 
-        if (index > arr.length-1) {
+        if (index-1 >= arr.length) {
             System.out.println("Invalid index");
         } else {
             for (int i = 0; i < index; i++) {
