@@ -26,18 +26,18 @@ public class ListOperations {
                 case "Insert":
                     number = Integer.parseInt(elements[1]);
                     int index = Integer.parseInt(elements[2]);
-                    if (index > list.size()-1) {
-                        System.out.println("Invalid index");
-                    } else {
+                    if (index >= 0 && index < list.size()) {
                         list.add(index, number);
+                    } else {
+                        System.out.println("Invalid index");
                     }
                     break;
                 case "Remove":
                     index = Integer.parseInt(elements[1]);
-                    if (index > list.size()-1) {
-                        System.out.println("Invalid index");
-                    } else {
+                    if (index >= 0 && index < list.size()) {
                         list.remove(index);
+                    } else {
+                        System.out.println("Invalid index");
                     }
                     break;
                 case "Shift":
@@ -52,7 +52,7 @@ public class ListOperations {
                     } else {
                         for (int i = 0; i < count; i++) {
                             list.add(0, list.get(list.size()-1));
-                            list.remove(list.get(list.size()-1));
+                            list.remove(list.size()-1);
                         }
                     }
                     break;
