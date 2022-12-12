@@ -19,32 +19,36 @@ public class PokemonDontGo {
             }
             int index = Integer.parseInt(scan.nextLine());
             if (index < 0) {
-                sum += list.get(0);
+                int value = list.get(0);
+                sum += value;
                 list.remove(0);
                 list.add(0, list.get(list.size()-1));
-            } else if (index > list.size()) {
+                increaseOrDecrease(list, value);
+            } else if (index >= list.size()) {
                 sum += list.get(list.size()-1);
+                int value = list.get(list.size()-1);
                 list.remove(list.size()-1);
-                list.add(0);
+                list.add(list.get(0));
+                increaseOrDecrease(list, value);
             } else {
                 int value = list.get(index);
-                for (int i = 0; i < list.size(); i++) {
-                    if (i != index) {
-                        if (list.get(i) <= value) {
-                            list.set(i, list.get(i) + value);
-                        } else {
-                            list.set(i, list.get(i) - value);
-                        }
-                        sum += list.get(index);
-
-
-                    }
-                }
+                sum += list.get(index);
                 list.remove(index);
-
+                increaseOrDecrease(list, value);
             }
 
         }
         System.out.println(sum);
+    }
+
+    public static void increaseOrDecrease(List<Integer> list, int value) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) <= value) {
+                list.set(i, list.get(i) + value);
+            } else {
+                list.set(i, list.get(i) - value);
+            }
+
+        }
     }
 }
