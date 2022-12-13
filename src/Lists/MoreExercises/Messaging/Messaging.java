@@ -21,13 +21,13 @@ public class Messaging {
                 sum += currentNum;
             }
             if (sum <= text.length()) {
-                char currentChar = text.charAt(sum-1);
+                char currentChar = text.charAt(sum);
                 sb.append(currentChar);
-                text = text.substring(0, sum) + text.substring(sum);
+                text = text.substring(0, sum) + text.substring(sum+1);
             } else {
                 int index = sum-text.length();
                 sb.append(text.charAt(index));
-                text = text.substring(0, index-1) + text.substring(index);
+                text = text.substring(0, index) + text.substring(index+1);
             }
         }
         System.out.println(sb);
