@@ -22,9 +22,12 @@ public class DrumSet {
             }
             int power = Integer.parseInt(input);
 
-
             for (int i = 0; i < drums.size(); i++) {
                 drums.set(i, drums.get(i) - power);
+            }
+
+
+            for (int i = 0; i < drums.size(); i++) {
                 if (drums.get(i) <= 0) {
                     double currentCost = powers.get(i) * 3;
                     if (money > currentCost) {
@@ -32,13 +35,12 @@ public class DrumSet {
                         money-= currentCost;
                     } else {
                         drums.remove(i);
-                        i--;
+                        powers.remove(i);
                     }
-
                 }
-
             }
         }
+
         for (Integer drum : drums) {
             System.out.print(drum + " ");
         }
