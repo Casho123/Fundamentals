@@ -19,7 +19,8 @@ public class VehicleCatalogue {
         }
         @Override
         public String toString() {
-            return String.format("Type: %s\n Model: %s\n Color: %s\n Horsepower: %d", type.toUpperCase().charAt(0) + type.substring(1), model, color, horsepower);
+            return String.format("Type: %s\n Model: %s\n Color: %s\n Horsepower: %d",
+                    type.toUpperCase().charAt(0) + type.substring(1), model, color, hp);
         }
     }
 
