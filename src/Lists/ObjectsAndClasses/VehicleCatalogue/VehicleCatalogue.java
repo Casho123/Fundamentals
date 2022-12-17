@@ -66,12 +66,6 @@ public class VehicleCatalogue {
             vehicles.stream().filter(v -> v.getModel().equals(input)).forEach(System.out::println);
         }
         getAverage(vehicles);
-
-
-
-
-
-
     }
     public static void getAverage(List<Vehicle> vehicles) {
         double carsHp = 0;
