@@ -1,4 +1,4 @@
-package Lists.ObjectsMoreExercises;
+package Lists.ObjectsMoreExercises.CompanyRoster;
 
 import java.util.ArrayList;
 import java.util.Comparator;
