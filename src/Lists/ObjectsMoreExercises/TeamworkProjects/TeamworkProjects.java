@@ -28,6 +28,10 @@ public class TeamworkProjects {
             return members;
         }
 
+        public void addMember(String name) {
+            this.members.add(name);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -43,7 +47,7 @@ public class TeamworkProjects {
             String user = elements[0];
             String teamName = elements[1];
 
-            Team team = new Team(user, teamName);
+            Team team = new Team(teamName, user);
 
             if (teamExists(teams, teamName)) {
                 System.out.printf("Team %s was already created!\n", teamName);
@@ -68,10 +72,33 @@ public class TeamworkProjects {
             } else if(memberExists(teams, user)) {
                 System.out.printf("Member %s cannot join team %s!\n", user, teamName);
             } else {
+                for (Team team : teams) {
+                    if (team.getName().equals(teamName)) {
+                        team.addMember(user);
+                    }
+                }
 
             }
         }
-        System.out.println();
+        teams.sort(Comparator.comparing(Team::getName));
+        for (Team team : teams) {
+            if (team.getMembers().size() > 0) {
+                System.out.println(team.getName());
+                System.out.printf("- %s\n", team.getCreator());
+                for (String member : team.getMembers()) {
+                    System.out.println("-- " + member);
+                }
+
+            }
+        }
+        System.out.println("Teams to disband:");
+        for (Team team : teams) {
+            if (team.getMembers().size() == 0) {
+                System.out.println(team.getName());
+
+            }
+
+        }
 
     }
 
@@ -94,6 +121,9 @@ public class TeamworkProjects {
 
     public static boolean memberExists(List<Team> teams, String name) {
         for (Team team : teams) {
+            if (team.getCreator().equals(name)) {
+                return true;
+            }
             for (String member : team.getMembers()) {
                 if (member.equals(name)) {
                     return true;
