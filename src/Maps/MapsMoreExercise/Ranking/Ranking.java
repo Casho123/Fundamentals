@@ -68,10 +68,10 @@ public class Ranking {
         System.out.printf("Best candidate is %s with total %d points.\n", name, bestResult);
         System.out.println("Ranking:");
         students.forEach((key, value) -> {
-            System.out.printf("%s%n", key);
+            System.out.printf("%s\n", key);
             value.entrySet().stream().
                     sorted((f, s) -> s.getValue() - f.getValue()).
-                    forEach(i -> System.out.printf("#  %s -> %d%n", i.getKey(), i.getValue()));
+                    forEach(i -> System.out.printf("#  %s -> %d\n", i.getKey(), i.getValue()));
         });
 
 
