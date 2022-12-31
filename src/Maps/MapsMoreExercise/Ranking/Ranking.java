@@ -41,12 +41,16 @@ public class Ranking {
                     students.put(student, new TreeMap<>());
                     students.get(student).put(contest, points);
                 } else {
+                    if (!students.get(student).containsKey(contest)) {
+                        students.get(student).put(contest, points);
+                    } else {
+                        int currentPointsForContest = students.get(student).get(contest);
+                        if (currentPointsForContest < points) {
+                            students.get(student).put(contest, points);
+                        }
+                    }
+                }
 
-                }
-                int currentPointsForContest = students.get(student).get(contest);
-                if (currentPointsForContest < points) {
-                    students.get(student).put(contest, points);
-                }
             }
         }
         System.out.println();
