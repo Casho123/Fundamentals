@@ -66,6 +66,13 @@ public class Ranking {
             }
         }
         System.out.printf("Best candidate is %s with total %d points.\n", name, bestResult);
+        for (Map.Entry<String, Map<String, Integer>> entry : students.entrySet()) {
+            System.out.println(entry.getKey());
+            for (Map.Entry<String, Integer> subject : entry.getValue().entrySet()) {
+                System.out.printf("#  %s -> %d\n", subject.getKey(), subject.getValue());
+            }
+
+        }
 
 
 
