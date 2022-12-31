@@ -53,20 +53,34 @@ public class Ranking {
 
             }
         }
-        System.out.println();
+        int bestResult = Integer.MIN_VALUE;
+        String name = "";
+        for (Map.Entry<String, Map<String, Integer>> entry : students.entrySet()) {
+            int currentResult = 0;
+            for (Map.Entry<String, Integer> subject : entry.getValue().entrySet()) {
+                currentResult += subject.getValue();
+            }
+            if (bestResult < currentResult) {
+                bestResult = currentResult;
+                name = entry.getKey();
+            }
+        }
+        System.out.printf("Best candidate is %s with total %d points.\n", name, bestResult);
+
+
+
     }
     public static boolean isValid(Map<String, String> contests, String contest, String password) {
         boolean hasContest = false;
         boolean hasPassword = false;
         if (contests.containsKey(contest)) {
             hasContest = true;
+        } else {
+            return false;
         }
         if (contests.get(contest).equals(password)) {
             hasPassword = true;
         }
-        if (hasContest && hasPassword) {
-            return true;
-        }
-        return false;
+        return hasPassword;
     }
 }
