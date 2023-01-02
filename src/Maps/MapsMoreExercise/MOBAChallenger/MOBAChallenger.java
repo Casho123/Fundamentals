@@ -1,9 +1,6 @@
 package Maps.MapsMoreExercise.MOBAChallenger;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MOBAChallenger {
     public static void main(String[] args) {
@@ -63,6 +60,22 @@ public class MOBAChallenger {
             }
         }
         return p1Exists && p2Exists;
+    }
+    public static boolean havePositionInCommon(Map<String, Map<String, Integer>> players, String p1, String p2) {
+        List<String> p1Positions = new ArrayList<>();
+        List<String> p2Positions = new ArrayList<>();
+        for (Map.Entry<String, Map<String, Integer>> player : players.entrySet()) {
+            if (player.getKey().equals(p1)) {
+                for (Map.Entry<String, Integer> pos : player.getValue().entrySet()) {
+                    p1Positions.add(pos.getKey());
+                }
+            } else if(player.getKey().equals(p2)) {
+                for (Map.Entry<String, Integer> pos : player.getValue().entrySet()) {
+                    p2Positions.add(pos.getKey());
+                }
+            }
+        }
+        return false;
 
     }
 }
