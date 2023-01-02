@@ -38,14 +38,48 @@ public class MOBAChallenger {
                 String playerOne = elements[0];
                 String playerTwo = elements[1];
                 if (playersExist(players, playerOne, playerTwo)) {
-
+                    boolean hasCommon = false;
+                    for (String s : players.get(playerOne).keySet()) {
+                        for (String s1 : players.get(playerTwo).keySet()) {
+                            if (s.equals(s1)) {
+                                hasCommon = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (hasCommon) {
+                        if (players.get(playerOne).values().stream().mapToInt(i -> i).sum() >
+                                players.get(playerTwo).values().stream().mapToInt(i -> i).sum()) {
+                            players.remove(playerTwo);
+                        } else if (players.get(playerTwo).values().stream().mapToInt(i -> i).sum() <
+                                players.get(playerOne).values().stream().mapToInt(i -> i).sum()) {
+                            players.remove(playerOne);
+                        }
+                    }
                 }
-
-
-
             }
         }
-        System.out.println();
+        players.entrySet().stream()
+                .sorted((p1, p2) -> {
+                    int result = Integer.compare(p2.getValue().values().stream().mapToInt(i -> i).sum(),
+                            p1.getValue().values().stream().mapToInt(i -> i).sum());
+                    if (result == 0) {
+                        result = p1.getKey().compareTo(p2.getKey());
+                    }
+                    return result;
+                })
+                .forEach(entry -> {
+                    System.out.printf("%s: %d skill\n", entry.getKey(), entry.getValue().values().stream().mapToInt(i -> i).sum());
+                    entry.getValue().entrySet()
+                            .stream()
+                            .sorted((e1, e2) -> {
+                                int result = Integer.compare(e2.getValue(), e1.getValue());
+                                if (result == 0) {
+                                    result = e1.getKey().compareTo(e2.getKey());
+                                }
+                                return result;
+                            }).forEach(e -> System.out.printf("- %s <::> %d\n", e.getKey(), e.getValue()));
+                });
 
     }
     public static boolean playersExist(Map<String, Map<String, Integer>> players, String playerOne, String playerTwo) {
@@ -60,22 +94,5 @@ public class MOBAChallenger {
             }
         }
         return p1Exists && p2Exists;
-    }
-    public static boolean havePositionInCommon(Map<String, Map<String, Integer>> players, String p1, String p2) {
-        List<String> p1Positions = new ArrayList<>();
-        List<String> p2Positions = new ArrayList<>();
-        for (Map.Entry<String, Map<String, Integer>> player : players.entrySet()) {
-            if (player.getKey().equals(p1)) {
-                for (Map.Entry<String, Integer> pos : player.getValue().entrySet()) {
-                    p1Positions.add(pos.getKey());
-                }
-            } else if(player.getKey().equals(p2)) {
-                for (Map.Entry<String, Integer> pos : player.getValue().entrySet()) {
-                    p2Positions.add(pos.getKey());
-                }
-            }
-        }
-        return false;
-
     }
 }
