@@ -15,6 +15,6 @@ public class CeaserCipher {
 
 
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 }
