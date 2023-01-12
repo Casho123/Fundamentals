@@ -12,7 +12,7 @@ public class RecursiveFibonacci {
     }
 
     private static Long getFibonacci(ArrayDeque<Long> fibonacci, Long N) {
-        if (N == 2) {
+        if (N < 2) {
             return 1L;
         } else {
             fibonacci.offer(0L);
