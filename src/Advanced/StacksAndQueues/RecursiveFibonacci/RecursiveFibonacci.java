@@ -18,8 +18,8 @@ public class RecursiveFibonacci {
             fibonacci.offer(0L);
             fibonacci.offer(1L);
             for (int i = 0; i < n; i++) {
-                long Sum = fibonacci.poll() + fibonacci.peek();
-                fibonacci.offer(Sum);
+                long sum = fibonacci.poll() + fibonacci.peek();
+                fibonacci.offer(sum);
             }
         }
         fibonacci.poll();
