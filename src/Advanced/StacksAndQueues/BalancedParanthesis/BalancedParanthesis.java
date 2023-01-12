@@ -10,13 +10,19 @@ public class BalancedParanthesis {
         char[] arr = scan.nextLine().toCharArray();
 
         ArrayDeque<Character> stack = new ArrayDeque<>();
-        for (int i = 0; i < arr.length; i++) {
+        ArrayDeque<Character> queue = new ArrayDeque<>();
+        for (int i = 0; i < arr.length/2; i++) {
             stack.push(arr[i]);
         }
+        for (int i = arr.length/2; i < arr.length; i++) {
+            queue.add(arr[i]);
+
+        }
+
         boolean isEqual = true;
         while (!stack.isEmpty()) {
-            char current = stack.poll();
-            char last = stack.peek();
+            char current = stack.peek();
+            char last = queue.peek();
             switch (current) {
                 case '{':
                     if (last != '}') {
@@ -37,6 +43,8 @@ public class BalancedParanthesis {
             if (!isEqual) {
                 break;
             }
+            stack.pop();
+            queue.poll();
         }
 
         if (isEqual) {
