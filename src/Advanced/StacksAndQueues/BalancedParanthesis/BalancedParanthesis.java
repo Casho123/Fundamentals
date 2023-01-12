@@ -1,8 +1,6 @@
 package Advanced.StacksAndQueues.BalancedParanthesis;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class BalancedParanthesis {
@@ -16,21 +14,36 @@ public class BalancedParanthesis {
             stack.push(arr[i]);
         }
         boolean isEqual = true;
-        while(!stack.isEmpty()) {
-            if (stack.pop() != stack.poll()) {
-                isEqual = false;
+        while (!stack.isEmpty()) {
+            char current = stack.poll();
+            char last = stack.peek();
+            switch (current) {
+                case '{':
+                    if (last != '}') {
+                        isEqual = false;
+                    }
+                    break;
+                case '[':
+                    if (last != ']') {
+                        isEqual = false;
+                    }
+                    break;
+                case '(':
+                    if (last != ')') {
+                        isEqual = false;
+                    }
+                    break;
+            }
+            if (!isEqual) {
                 break;
-
-
             }
         }
+
         if (isEqual) {
             System.out.println("YES");
         } else {
             System.out.println("NO");
         }
-
-
 
 
     }
