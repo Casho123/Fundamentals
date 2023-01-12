@@ -6,23 +6,23 @@ import java.util.Scanner;
 public class RecursiveFibonacci {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        ArrayDeque<Long> Fibonacci = new ArrayDeque<>();
+        ArrayDeque<Long> fibonacci = new ArrayDeque<>();
         long N = Integer.parseInt(scan.nextLine());
-        System.out.println(getFibonacci(Fibonacci, N));
+        System.out.println(getFibonacci(fibonacci, N));
     }
 
-    private static Long getFibonacci(ArrayDeque<Long> Fibonacci, Long N) {
+    private static Long getFibonacci(ArrayDeque<Long> fibonacci, Long N) {
         if (N == 2) {
             return 1L;
         } else {
-            Fibonacci.offer(0L);
-            Fibonacci.offer(1L);
+            fibonacci.offer(0L);
+            fibonacci.offer(1L);
             for (int i = 0; i < N; i++) {
-                long Sum = Fibonacci.poll() + Fibonacci.peek();
-                Fibonacci.offer(Sum);
+                long Sum = fibonacci.poll() + fibonacci.peek();
+                fibonacci.offer(Sum);
             }
         }
-        Fibonacci.poll();
-        return Fibonacci.peek();
+        fibonacci.poll();
+        return fibonacci.peek();
     }
 }
