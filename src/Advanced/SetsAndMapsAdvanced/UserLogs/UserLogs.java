@@ -29,7 +29,7 @@ public class UserLogs {
             int index = 1;
             for (Map.Entry<String, List<String>> current : entry.getValue().entrySet()) {
                    if (index < size) {
-                       System.out.printf("%s => %d,\n", current.getKey(), current.getValue().size());
+                       System.out.printf("%s => %d, ", current.getKey(), current.getValue().size());
                    } else {
                        System.out.printf("%s => %d.\n", current.getKey(), current.getValue().size());
                    }
