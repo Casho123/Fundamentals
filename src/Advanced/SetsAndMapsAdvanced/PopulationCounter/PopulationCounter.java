@@ -23,7 +23,11 @@ public class PopulationCounter {
             int population = Integer.parseInt(elements[2]);
 
             countries.putIfAbsent(country, new LinkedHashMap<>());
+            countries.get(country).putIfAbsent(city, 0);
+            countries.get(country).put(city, countries.get(country).get(city) + population);
         }
+        System.out.println();
+
 
     }
 }
