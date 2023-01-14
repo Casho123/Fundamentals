@@ -35,6 +35,11 @@ public class PopulationCounter {
         })
                 .forEach(entry -> {
                     System.out.printf("%s (total population: %d)\n", entry.getKey(), entry.getValue().values().stream().mapToInt(i -> i).sum());
+                    entry.getValue().entrySet().stream()
+                            .sorted((city1, city2) -> {
+                                int res = Integer.compare(city2.getValue(), city1.getValue());
+                                return res;
+                            }).forEach(c -> System.out.printf("=>%s: %d\n", c.getKey(), c.getValue()));
                 });
 
 
