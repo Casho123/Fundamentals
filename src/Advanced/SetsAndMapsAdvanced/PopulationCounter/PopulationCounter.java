@@ -26,7 +26,18 @@ public class PopulationCounter {
             countries.get(country).putIfAbsent(city, 0);
             countries.get(country).put(city, countries.get(country).get(city) + population);
         }
-        System.out.println();
+
+        countries.entrySet().stream().sorted((c1,c2) -> {
+            int result = Integer.compare(c2.getValue().values().stream().mapToInt(i -> i).sum(),
+                    c1.getValue().values().stream().mapToInt(i -> i).sum());
+            return result;
+
+        })
+                .forEach(entry -> {
+                    System.out.printf("%s (total population: %d)\n", entry.getKey(), entry.getValue().values().stream().mapToInt(i -> i).sum());
+                });
+
+
 
 
     }
