@@ -7,7 +7,7 @@ public class LogsAggregator {
         Scanner scan = new Scanner(System.in);
 
         int n = Integer.parseInt(scan.nextLine());
-        Map<String, Integer> values = new LinkedHashMap<>();
+        Map<String, Integer> values = new TreeMap<>();
         Map<String, List<String>> ipAddresses = new TreeMap<>();
 
 
@@ -24,6 +24,15 @@ public class LogsAggregator {
                 ipAddresses.get(user).add(ip);
             }
         }
+
+        for (Map.Entry<String, Integer> entry : values.entrySet()) {
+            System.out.printf("%s: %d ", entry.getKey(), entry.getValue());
+            Collections.sort(ipAddresses.get(entry.getKey()));
+            String result = "[" + String.join(", ", ipAddresses.get(entry.getKey())) + "]";
+            System.out.println(result);
+
+        }
+
 
     }
 }
