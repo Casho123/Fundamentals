@@ -30,6 +30,7 @@ public class PopulationCounter {
         countries.entrySet().stream().sorted((c1,c2) -> {
             int result = Integer.compare(c2.getValue().values().stream().mapToInt(i -> i).sum(),
                     c1.getValue().values().stream().mapToInt(i -> i).sum());
+
             return result;
 
         })
