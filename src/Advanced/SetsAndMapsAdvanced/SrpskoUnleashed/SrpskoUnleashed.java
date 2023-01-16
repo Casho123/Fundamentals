@@ -42,6 +42,11 @@ public class SrpskoUnleashed {
         }
         for (Map.Entry<String, Map<String, Integer>> entry : venues.entrySet()) {
             System.out.println(entry.getKey());
+            entry.getValue().entrySet().stream()
+                    .sorted((v1,v2) -> {
+                        int result = Integer.compare(v2.getValue(), v1.getValue());
+                        return result;
+                    }).forEach(s -> System.out.printf("#  %s -> %d\n", s.getKey(), s.getValue()));
         }
 
 
