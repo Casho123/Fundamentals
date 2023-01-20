@@ -2,22 +2,21 @@ package Advanced.DefiningClasses.SpeedRacing;
 
 public class Car {
     private String model;
-    private int fuelAmount;
+    private double fuelAmount;
     private double fuelCostPerKm;
-    private int distanceTravelled;
+    private int distanceTravelled = 0;
 
-    public Car(String model, int fuelAmount, double fuelCostPerKm, int distanceTravelled) {
+    public Car(String model, double fuelAmount, double fuelCostPerKm) {
         this.model = model;
         this.fuelAmount = fuelAmount;
         this.fuelCostPerKm = fuelCostPerKm;
-        this.distanceTravelled = distanceTravelled;
     }
 
     public String getModel() {
         return model;
     }
 
-    public int getFuelAmount() {
+    public double getFuelAmount() {
         return fuelAmount;
     }
 
@@ -27,5 +26,20 @@ public class Car {
 
     public int getDistanceTravelled() {
         return distanceTravelled;
+    }
+
+    public void setDistanceTravelled(int distanceTravelled) {
+        this.distanceTravelled = distanceTravelled;
+    }
+    public void drive(int distance) {
+        double neededFuel = this.fuelCostPerKm * distance;
+        if (neededFuel > this.fuelAmount) {
+            System.out.println("Insufficient fuel for the drive");
+        } else {
+            this.fuelAmount -= neededFuel;
+            this.distanceTravelled += distance;
+
+        }
+
     }
 }
