@@ -7,5 +7,7 @@ public class SpeedRacing {
         Scanner scan = new Scanner(System.in);
 
 
+
+
     }
 }
