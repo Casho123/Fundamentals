@@ -23,4 +23,9 @@ public class Company {
     public double getSalary() {
         return salary;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %.2f", this.name, this.department, this.salary);
+    }
 }

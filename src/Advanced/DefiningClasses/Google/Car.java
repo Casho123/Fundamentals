@@ -17,4 +17,9 @@ public class Car {
     public int getSpeed() {
         return speed;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %d",this.getModel(), this.getSpeed());
+    }
 }

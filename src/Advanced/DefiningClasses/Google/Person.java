@@ -12,10 +12,8 @@ public class Person {
     private List<Child> children = new ArrayList<>();
     private Car car;
 
-    public Person(String name, Company company, Car car) {
+    public Person(String name) {
         this.name = name;
-        this.company = company;
-        this.car = car;
     }
 
     public String getName() {
@@ -40,5 +38,24 @@ public class Person {
 
     public Car getCar() {
         return car;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public void addPokemon(Pokemon pokemon) {
+        this.pokemons.add(pokemon);
+    }
+
+    public void addParent(Parent parent) {
+        this.parents.add(parent);
+    }
+    public void addChildren(Child child) {
+        this.children.add(child);
     }
 }
