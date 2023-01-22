@@ -37,8 +37,40 @@ public class Main {
                 break;
             }
             String element = input;
+            for (Trainer trainer : trainers) {
+                boolean hasElement = false;
+                for (Pokemon pokemon : trainer.getPokemons()) {
+                    if (pokemon.getElement().equals(element)) {
+                        hasElement = true;
+                        break;
+                    }
+                }
+                if (hasElement) {
+                    trainer.setBadges(trainer.getBadges() + 1);
+                } else {
+                    if (trainer.getPokemons().size() > 0) {
+                        int index = trainer.getPokemons().size();
+                        for (Pokemon pokemon : trainer.getPokemons()) {
+                            pokemon.setHealth(pokemon.getHealth()-10);
+                            if (pokemon.getHealth() <= 0) {
+                                trainer.getPokemons().remove(pokemon);
+                                index--;
+                            }
+                            if (index == 0) {
+                                break;
+                            }
 
+                        }
+
+                    }
+                }
+
+            }
         }
+        trainers.stream()
+                .sorted((t1, t2) -> Integer.compare(t2.getBadges(), t1.getBadges()))
+                .forEach(t -> System.out.printf("%s %d %d\n", t.getName(), t.getBadges(), t.getPokemons().size()));
+
 
 
     }

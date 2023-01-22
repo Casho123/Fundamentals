@@ -28,5 +28,10 @@ public class Trainer {
     public void add(Pokemon pokemon) {
         this.pokemons.add(pokemon);
     }
+
+    public void setBadges(int badges) {
+        this.badges = badges;
+    }
+
 }
 
