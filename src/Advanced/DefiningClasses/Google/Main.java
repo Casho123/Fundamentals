@@ -91,9 +91,6 @@ public class Main {
             }
         }
 
-
-
-
     }
     public static boolean isFound(List<Person> people, String name) {
         boolean isTrue = false;
