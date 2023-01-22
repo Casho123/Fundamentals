@@ -75,6 +75,18 @@ public class Main {
         if (foundPerson.getPokemons().size() > 0) {
             for (Pokemon pokemon : foundPerson.getPokemons()) {
                 System.out.println(pokemon.toString());
+            }
+        }
+        System.out.println("Parents:");
+        if (foundPerson.getParents().size() > 0) {
+            for (Parent parent : foundPerson.getParents()) {
+                System.out.println(parent.toString());
+            }
+        }
+        System.out.println("Children:");
+        if (foundPerson.getChildren().size() > 0) {
+            for (Child child : foundPerson.getChildren()) {
+                System.out.println(child.toString());
 
             }
         }

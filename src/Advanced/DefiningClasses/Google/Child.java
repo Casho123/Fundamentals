@@ -17,4 +17,9 @@ public class Child {
     public String getBirthday() {
         return birthday;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", this.name, this.birthday);
+    }
 }
