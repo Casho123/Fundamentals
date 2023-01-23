@@ -1,4 +1,4 @@
-package Advanced.Generics.GenericBox;
+package Advanced.Generics.GenericBoxOfInteger;
 
 public class Box<T> {
 
