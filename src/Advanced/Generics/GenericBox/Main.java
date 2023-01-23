@@ -10,6 +10,8 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             String current = scan.nextLine();
+            Box<String> box = new Box<>(current);
+            System.out.println(box.toString());
 
         }
 
