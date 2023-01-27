@@ -30,5 +30,18 @@ public class CustomList<T extends Comparable<T>> {
         }
         return isPresent;
     }
+    public void swap(int index1, int index2) {
+        T temp = this.values.get(index1);
+        this.values.set(index1, this.values.get(index2));
+        this.values.set(index2, temp);
+    }
+    public int countGreaterThan(T element) {
+        long count = this.values.stream().filter(e -> e.compareTo(element) > 0).count();
+
+       return (int)count;
+    }
+
+
+
 
 }
