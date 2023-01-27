@@ -1,7 +1,10 @@
 package Advanced.Generics.CustomList;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class CustomList<T extends Comparable<T>> {
 
@@ -39,6 +42,25 @@ public class CustomList<T extends Comparable<T>> {
         long count = this.values.stream().filter(e -> e.compareTo(element) > 0).count();
 
        return (int)count;
+    }
+    public T getMax() {
+        T maxElement = this.values.get(0);
+        for (T value : this.values) {
+            if (value.compareTo(maxElement) > 0) {
+                maxElement = value;
+            }
+        }
+        return maxElement;
+    }
+
+    public T getMin(List<T> elements) {
+        T minElement = this.values.get(0);
+        for (T value : this.values) {
+            if (value.compareTo(minElement) < 0) {
+                minElement = value;
+            }
+        }
+        return minElement;
     }
 
 
