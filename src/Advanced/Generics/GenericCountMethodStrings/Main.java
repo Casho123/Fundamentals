@@ -8,13 +8,13 @@ public class Main {
 
         int n = Integer.parseInt(scan.nextLine());
 
-        Box<String> box = new Box<>();
+        Box<Double> box = new Box<>();
         for (int i = 0; i < n; i++) {
-            String current = scan.nextLine();
+            double current = Double.parseDouble(scan.nextLine());
             box.addValue(current);
         }
-        String strToCompare = scan.nextLine();
-        System.out.println(box.getElementsCount(strToCompare));
+        double current = Double.parseDouble(scan.nextLine());
+        System.out.println(box.getElementsCount(current));
 
 
 
