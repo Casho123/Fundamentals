@@ -17,8 +17,8 @@ public class CustomList<T extends Comparable<T>> {
     public void add(T element) {
         this.values.add(element);
     }
-    public void remove(T element) {
-        this.values.remove(element);
+    public void remove(int index) {
+        this.values.remove(index);
     }
     public boolean contains(T element) {
         boolean isPresent = false;
@@ -53,7 +53,7 @@ public class CustomList<T extends Comparable<T>> {
         return maxElement;
     }
 
-    public T getMin(List<T> elements) {
+    public T getMin() {
         T minElement = this.values.get(0);
         for (T value : this.values) {
             if (value.compareTo(minElement) < 0) {
@@ -62,6 +62,14 @@ public class CustomList<T extends Comparable<T>> {
         }
         return minElement;
     }
+    public void print() {
+        for (T value : this.values) {
+            System.out.println(value);
+
+        }
+    }
+
+
 
 
 
