@@ -68,6 +68,9 @@ public class CustomList<T extends Comparable<T>> {
 
         }
     }
+    public int size() {
+        return this.values.size();
+    }
 
 
 
