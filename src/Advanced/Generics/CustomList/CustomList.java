@@ -1,12 +1,11 @@
 package Advanced.Generics.CustomList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 import java.util.stream.Stream;
 
-public class CustomList<T extends Comparable<T>> {
+public class CustomList<T extends Comparable<T>> implements Iterable<T> {
 
     private List<T> values;
 
@@ -76,9 +75,23 @@ public class CustomList<T extends Comparable<T>> {
     }
 
 
+    @NotNull
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index < values.size();
+            }
 
+            @Override
+            public T next() {
+                T element = values.get(index);
+                index++;
+                return element;
 
-
-
-
+            }
+        };
+    }
 }
