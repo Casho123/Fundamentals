@@ -46,6 +46,10 @@ public class Main {
                 case "Print":
                     list.print();
                     break;
+                case "Sort":
+                    Sorter.sort(list);
+                    break;
+
 
             }
         }

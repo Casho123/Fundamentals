@@ -33,6 +33,12 @@ public class CustomList<T extends Comparable<T>> {
         }
         return isPresent;
     }
+    public int size() {
+        return this.values.size();
+    }
+    public T get(int index) {
+        return this.values.get(index);
+    }
     public void swap(int index1, int index2) {
         T temp = this.values.get(index1);
         this.values.set(index1, this.values.get(index2));
@@ -68,9 +74,7 @@ public class CustomList<T extends Comparable<T>> {
 
         }
     }
-    public int size() {
-        return this.values.size();
-    }
+
 
 
 
