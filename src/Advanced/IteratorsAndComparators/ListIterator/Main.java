@@ -1,14 +1,43 @@
 package Advanced.IteratorsAndComparators.ListIterator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        ListyIterator listyIterator = new ListyIterator(new ArrayList<>());
 
+        List<String> list = Arrays.stream(scan.nextLine().split("\\s+")).skip(1).collect(Collectors.toList());
+        ListyIterator listyIterator = new ListyIterator(list);
+
+        while (true) {
+            String input = scan.nextLine();
+            if (input.equals("END")) {
+                break;
+            }
+            switch (input) {
+                case "HasNext":
+                    System.out.println(listyIterator.hasNext());
+                    break;
+                case "Move":
+                    System.out.println(listyIterator.move());
+                    break;
+                case "Print":
+                    try {
+                        listyIterator.print();
+
+                    } catch (IllegalStateException e) {
+                        System.out.println(e.getMessage());
+
+                    }
+                    break;
+
+            }
+        }
 
 
     }
