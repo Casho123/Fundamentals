@@ -21,7 +21,7 @@ public class Main {
             }
             switch (input) {
                 case "HasNext":
-                    System.out.println(listyIterator.hasNext());
+                    System.out.println(listyIterator.iterator().hasNext());
                     break;
                 case "Move":
                     System.out.println(listyIterator.move());
@@ -33,6 +33,13 @@ public class Main {
                     } catch (IllegalStateException e) {
                         System.out.println(e.getMessage());
 
+                    }
+                    break;
+                case "PrintAll":
+                    try {
+                        listyIterator.printAll();
+                    } catch (IllegalStateException e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
 
