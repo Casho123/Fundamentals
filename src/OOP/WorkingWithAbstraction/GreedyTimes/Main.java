@@ -10,10 +10,21 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         double capacity = Double.parseDouble(scan.nextLine());
-        Map<String, List<String>> stuff = new LinkedHashMap<>();
+        Map<String, Map<String,Integer>> stuff = new LinkedHashMap<>();
 
 
-        String[] input = scan.nextLine().split("\\s+");
+        String[] items = scan.nextLine().split("\\s+");
+
+        for (int i = 0; i < items.length; i+=2) {
+            String item = items[i];
+            int quantity = Integer.parseInt(items[i+1]);
+
+
+
+
+        }
+
+
 
 
 
