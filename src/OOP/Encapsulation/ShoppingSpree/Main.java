@@ -34,10 +34,26 @@ public class Main {
             String[] arr = current.split("\\s+");
             String personName = arr[0];
             String productName = arr[1];
-
-
-
+            Person person = findPerson(people, personName);
+            Product product = findProduct(products, productName);
+            person.buyProduct(product);
         }
+        for (Person person : people) {
+            System.out.printf("%s - ", person.getName());
+            if (person.getProducts().size() > 0) {
+                for (int i = 0; i < person.getProducts().size(); i++) {
+                    if (i < person.getProducts().size()-1) {
+                        System.out.printf("%s, ", person.getProducts().get(i).getName());
+                    } else {
+                        System.out.printf("%s", person.getProducts().get(i).getName());
+                    }
+                }
+            } else {
+                System.out.print("Nothing bought");
+            }
+            System.out.println();
+        }
+
 
 
 

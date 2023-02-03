@@ -19,6 +19,10 @@ public class Person {
         return name;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
     private void setName(String name) {
         if (name == null || name.trim().equals("")) {
             throw new IllegalArgumentException("Name cannot be empty");
@@ -36,6 +40,7 @@ public class Person {
     public void buyProduct(Product product) {
         if (product.getCost() <= this.money) {
             products.add(product);
+            System.out.printf("%s bought %s\n", this.name, product.getName());
             this.money -= product.getCost();
         } else {
             System.out.printf("%s can't afford %s\n", this.name, product.getName());
