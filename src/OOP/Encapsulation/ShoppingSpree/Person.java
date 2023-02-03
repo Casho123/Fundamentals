@@ -32,4 +32,14 @@ public class Person {
         }
         this.money = money;
     }
+
+    public void buyProduct(Product product) {
+        if (product.getCost() <= this.money) {
+            products.add(product);
+            this.money -= product.getCost();
+        } else {
+            System.out.printf("%s can't afford %s\n", this.name, product.getName());
+
+        }
+    }
 }
