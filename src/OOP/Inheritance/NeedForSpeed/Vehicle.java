@@ -7,8 +7,8 @@ public class Vehicle {
     private double fuel;
     private int horsePower;
 
-    public Vehicle(double fuelConsumption, int horsePower) {
-        this.fuelConsumption = fuelConsumption;
+    public Vehicle(double fuel, int horsePower) {
+        this.fuel = fuel;
         this.horsePower = horsePower;
         this.setFuelConsumption(DEFAULT_FUEL_CONSUMPTION);
     }
@@ -38,6 +38,10 @@ public class Vehicle {
     }
 
     public void drive(double kilometres) {
+        if (DEFAULT_FUEL_CONSUMPTION * kilometres <= this.fuel) {
+            fuel -= DEFAULT_FUEL_CONSUMPTION * kilometres;
+        }
+
 
     }
 }

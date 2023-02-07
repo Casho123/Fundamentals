@@ -1,7 +1,8 @@
 package OOP.Inheritance.NeedForSpeed;
 
 public class CrossMotorcycle extends MotorCycle{
-    public CrossMotorcycle(double fuelConsumption, int horsePower) {
-        super(fuelConsumption, horsePower);
+
+    public CrossMotorcycle(double fuel, int horsePower) {
+        super(fuel, horsePower);
     }
 }
