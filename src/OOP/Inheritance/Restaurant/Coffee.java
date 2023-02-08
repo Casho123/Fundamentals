@@ -1,11 +1,11 @@
-package OOP.Inheritance.Restaraunt;
+package OOP.Inheritance.Restaurant;
 
 import java.math.BigDecimal;
 
 public class Coffee extends HotBeverage {
 
     private static final double COFFEE_MILLILITERS = 50;
-    private static final BigDecimal COFFEE_PRICE = new BigDecimal("3.50");
+    private static final BigDecimal COFFEE_PRICE = BigDecimal.valueOf(3.50);
     private double caffeine;
 
 
@@ -16,5 +16,8 @@ public class Coffee extends HotBeverage {
 
     public double getCaffeine() {
         return caffeine;
+    }
+
+    public static class Main {
     }
 }
