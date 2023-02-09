@@ -36,7 +36,7 @@ public class Animal {
     }
 
     private void setAge(int age) {
-        if (age <= 0) {
+        if (age < 0) {
             throw new IllegalArgumentException("Invalid input!");
         }
         this.age = age;
