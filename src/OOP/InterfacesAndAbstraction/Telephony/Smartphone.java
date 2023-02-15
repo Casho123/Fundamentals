@@ -13,13 +13,47 @@ public class Smartphone implements Callable, Browsable{
         this.urls = urls;
     }
 
+
+
     @Override
     public String browse() {
-        return "Browsing: ";
+        StringBuilder sb = new StringBuilder();
+        for (String url : this.urls) {
+            boolean isValid = true;
+            for (int i = 0; i < url.length(); i++) {
+                if (Character.isDigit(url.charAt(i))) {
+                    isValid = false;
+                    break;
+                }
+            }
+            if (isValid) {
+                sb.append("Browsing: ").append(url).append("!").append(System.lineSeparator());
+            } else {
+                sb.append("Invalid URL!");
+            }
+        }
+        return sb.toString();
     }
 
     @Override
     public String call() {
-        return "Calling... ";
+        StringBuilder sb = new StringBuilder();
+        for (String number : this.numbers) {
+            boolean isValid = true;
+            for (int i = 0; i < number.length(); i++) {
+                if (!Character.isDigit(number.charAt(i))) {
+                    isValid = false;
+                    break;
+                }
+            }
+            if (isValid) {
+                sb.append("Calling... ").append(number).append(System.lineSeparator());
+            } else {
+                sb.append("Invalid number!").append(System.lineSeparator());
+            }
+
+
+        }
+        return sb.toString().trim();
     }
 }
