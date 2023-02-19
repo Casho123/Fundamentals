@@ -34,7 +34,8 @@ public class Main {
             }
 
         }
-
+        System.out.println(car.toString());
+        System.out.println(truck.toString());
 
     }
 }
