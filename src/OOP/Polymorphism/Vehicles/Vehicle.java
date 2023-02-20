@@ -50,8 +50,14 @@ public abstract class Vehicle {
         }
         return result;
     }
-    public void refuel(double fuel) {
-        this.fuelQuantity+= fuel;
+    protected void refuel(double quantity) {
+        if (quantity <= 0) {
+            throw  new IllegalArgumentException("Fuel must be a positive number");
+        }
+        if (this.fuelQuantity + quantity > this.tankCapacity) {
+            throw new IllegalArgumentException("Cannot fit fuel in tank");
+        }
+        this.fuelQuantity += quantity;
     }
 
     @Override
