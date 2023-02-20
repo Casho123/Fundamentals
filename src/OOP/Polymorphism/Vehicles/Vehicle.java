@@ -7,9 +7,12 @@ public abstract class Vehicle {
     private double fuelQuantity;
     private double fuelConsumption;
 
-    protected Vehicle(double fuelQuantity, double fuelConsumption) {
+    private double tankCapacity;
+
+    protected Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         setFuelQuantity(fuelQuantity);
         setFuelConsumption(fuelConsumption);
+        setTankCapacity(tankCapacity);
     }
 
     public double getFuelQuantity() {
@@ -28,6 +31,15 @@ public abstract class Vehicle {
     protected void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
+
+    public double getTankCapacity() {
+        return tankCapacity;
+    }
+
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
+    }
+
     public String drive(double km) {
         double fuelNeeded = this.fuelConsumption * km;
         String result = "needs refueling";

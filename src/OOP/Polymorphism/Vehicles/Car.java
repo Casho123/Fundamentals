@@ -1,8 +1,9 @@
 package OOP.Polymorphism.Vehicles;
 
 public class Car extends Vehicle{
-    public Car(double fuelQuantity, double fuelConsumption) {
-        super(fuelQuantity, fuelConsumption);
+
+    protected Car(double fuelQuantity, double fuelConsumption, double tankCapacity) {
+        super(fuelQuantity, fuelConsumption, tankCapacity);
     }
 
     @Override

@@ -8,8 +8,8 @@ public class Main {
         String[] elements = scan.nextLine().split("\\s+");
         String[] tokens = scan.nextLine().split("\\s+");
         int number = Integer.parseInt(scan.nextLine());
-        Vehicle car = new Car(Double.parseDouble(elements[1]), Double.parseDouble(elements[2]));
-        Vehicle truck = new Truck(Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2]));
+        Vehicle car = new Car(Double.parseDouble(elements[1]), Double.parseDouble(elements[2]), Double.parseDouble(elements[3]));
+        Vehicle truck = new Truck(Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2]), Double.parseDouble(elements[3]));
 
         for (int i = 0; i < number; i++) {
             String[] input = scan.nextLine().split("\\s+");
