@@ -1,13 +1,16 @@
 package OOP.TestingJava;
 
+import java.util.ArrayList;
+
 public class C {
     public static void main(String[] args) {
-
-       Apple apple = new Apple();
-       Apple apple2 = new Apple();
-
-        System.out.println(apple == apple2);
-        System.out.println(apple.equals(apple2));
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Denver");
+        list.add("Austin");
+        list.add(new java.util.Date());
+        String city = list.get(0);
+        list.set(3, "Dallas");
+        System.out.println(list.get(3));
     }
 }
 
