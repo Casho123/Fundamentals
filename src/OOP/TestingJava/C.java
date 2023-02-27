@@ -1,13 +1,17 @@
 package OOP.TestingJava;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class C {
     public static void main(String[] args) {
-        long value = Long.MAX_VALUE + 1;
-        System.out.println(value);
-
+        try {
+            int value = 50;
+            if (value < 40)
+                throw new Exception("value is too small");
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        System.out.println("Continue after the catch block");
 
     }
 
