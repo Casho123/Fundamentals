@@ -7,12 +7,9 @@ import java.util.Date;
 public class C {
     public static void main(String[] args) {
 
-        Date n = new Date(2013, Calendar.APRIL,1);
-
-        System.out.println(n instanceof Date);
-        System.out.println(n instanceof Object);
-        System.out.println(n instanceof Comparable<?>);
-        String date = "sas";
+        Integer n1 = new Integer(3);
+        Object n2 = new Integer(4);
+        System.out.println(n1.compareTo(n2));
 
 
     }
