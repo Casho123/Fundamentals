@@ -5,25 +5,12 @@ import java.util.Arrays;
 
 public class C {
     public static void main(String[] args) {
+        long value = Long.MAX_VALUE + 1;
+        System.out.println(value);
 
 
     }
 
-    public class A {
-
-       protected int i;
-
-
-       protected void m() {
-
-        }
-    }
-    public class B extends A {
-        public void m1(String[] args) {
-            System.out.println(i);
-            m();
-        }
-    }
 
 }
 
