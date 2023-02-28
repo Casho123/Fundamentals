@@ -9,15 +9,12 @@ import java.util.GregorianCalendar;
 
 public class C {
     public static void main(String[] args) {
-        Calendar calendar = new GregorianCalendar(2013, 2, 1);
-        Calendar calendar1 = calendar;
-        Calendar calendar2 = (Calendar)calendar.clone();
-        System.out.println("calendar == calendar1 is " +
-                (calendar == calendar1));
-        System.out.println("calendar == calendar2 is " +
-                (calendar == calendar2));
-        System.out.println("calendar.equals(calendar2) is " +
-                calendar.equals(calendar2));
+        java.util.Date date = new java.util.Date();
+        java.util.Date date1 = date;
+        java.util.Date date2 = (java.util.Date)(date.clone());
+        System.out.println(date == date1);
+        System.out.println(date == date2);
+        System.out.println(date.equals(date2));
 
 
     }
