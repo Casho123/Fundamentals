@@ -2,29 +2,21 @@ package OOP.TestingJava;
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import java.util.Date;
 
 public class C {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a nonnegative integer: ");
-        int n = input.nextInt();
+         Integer[] integers = {1, 2, 3, 4, 5};
+         String[] strings = {"London", "Paris", "New York", "Austin"};
+        C.print(integers);
+        C.print(strings);
+        }
 
-        // Display factorial
-        System.out.println("Factorial of " + n + " is " + factorial(n));
-    }
-
-    /**
-     * Return the factorial for the specified number
-     */
-    public static long factorial(int n) {
-        if (n == 0) // Base case
-            return 1;
-        else
-            return n * factorial(n - 1); // Recursive call
-    }
-
+          public static <E> void print(E[] list) {
+         for (int i = 0; i < list.length; i++)
+            System.out.print(list[i] + " ");
+        System.out.println();
+        }
 }
 
 
