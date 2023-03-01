@@ -16,7 +16,7 @@ public class Tiger extends Feline {
         if (food instanceof Vegetable) {
             System.out.println("Tigers are not eating that type of food!");
         } else {
-            this.setFoodEaten(food.getQuantity() + this.getFoodEaten());
+            super.setFoodEaten(food.getQuantity() + super.getFoodEaten());
         }
     }
 }

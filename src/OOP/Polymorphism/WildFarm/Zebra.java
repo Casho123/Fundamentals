@@ -17,7 +17,7 @@ public class Zebra extends Mammal {
         if (food instanceof Meat) {
             System.out.println("Zebras are not eating that type of food!");
         } else {
-            this.setFoodEaten(food.getQuantity() + this.getFoodEaten());
+            super.setFoodEaten(food.getQuantity() + super.getFoodEaten());
         }
 
     }

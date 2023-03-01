@@ -9,51 +9,56 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         List<Animal> animalList = new ArrayList<>();
 
-        String input = scan.nextLine();
 
-        while (!("End".equals(input))) {
-            String inputFood = scan.next();
 
-            String[] tokensFood = inputFood.split(" ");
-            String[] tokensAnimal = input.split(" ");
+        while (true) {
+            String input = scan.nextLine();
+            if (input.equals("End")) {
+                break;
+            }
+            String[] animalArr = input.split("\\s+");
+            String[] foodArr = scan.nextLine().split("\\s+");
+
+
+
             Food food = null;
             Animal animal = null;
-            switch (tokensFood[0]) {
+            switch (foodArr[0]) {
                 case "Vegetable":
-                    food = new Vegetable(Integer.parseInt(tokensFood[1]));
+                    food = new Vegetable(Integer.parseInt(foodArr[1]));
                     break;
                 case "Meat":
-                    food = new Meat(Integer.parseInt(tokensFood[1]));
+                    food = new Meat(Integer.parseInt(foodArr[1]));
                     break;
             }
 
-            switch (tokensAnimal[0]) {
+            switch (animalArr[0]) {
                 case "Cat":
-                    try{
-                        animal = new Cat(tokensAnimal[1], Double.parseDouble(tokensAnimal[2]), tokensAnimal[3], tokensAnimal[4]);
+                    try {
+                        animal = new Cat(animalArr[1], Double.parseDouble(animalArr[2]), animalArr[3], animalArr[4]);
                         animal.makeSound();
                         animal.eat(food);
-                    }catch (IllegalArgumentException ex){
+                    } catch (IllegalArgumentException ex) {
                         System.out.println(ex.getMessage());
                     }
                     animalList.add(animal);
                     break;
                 case "Tiger":
-                    try{
-                        animal = new Tiger(tokensAnimal[1], Double.parseDouble(tokensAnimal[2]), tokensAnimal[3]);
+                    try {
+                        animal = new Tiger(animalArr[1], Double.parseDouble(animalArr[2]), animalArr[3]);
                         animal.makeSound();
                         animal.eat(food);
-                    }catch (IllegalArgumentException ex){
+                    } catch (IllegalArgumentException ex) {
                         System.out.println(ex.getMessage());
                     }
                     animalList.add(animal);
                     break;
                 case "Mouse":
                     try {
-                        animal = new Mouse(tokensAnimal[1], Double.parseDouble(tokensAnimal[2]), tokensAnimal[3]);
+                        animal = new Mouse(animalArr[1], Double.parseDouble(animalArr[2]), animalArr[3]);
                         animal.makeSound();
                         animal.eat(food);
-                    }catch (IllegalArgumentException ex){
+                    } catch (IllegalArgumentException ex) {
                         System.out.println(ex.getMessage());
                     }
                     animalList.add(animal);
@@ -61,16 +66,15 @@ public class Main {
                 case "Zebra":
                     try {
 
-                        animal = new Zebra(tokensAnimal[1], Double.parseDouble(tokensAnimal[2]), tokensAnimal[3]);
+                        animal = new Zebra(animalArr[1], Double.parseDouble(animalArr[2]), animalArr[3]);
                         animal.makeSound();
                         animal.eat(food);
-                    }catch (IllegalArgumentException ex){
+                    } catch (IllegalArgumentException ex) {
                         System.out.println(ex.getMessage());
                     }
                     animalList.add(animal);
                     break;
             }
-            input = scan.nextLine();
         }
 
         for (Animal animal : animalList) {
@@ -79,5 +83,5 @@ public class Main {
     }
 
 
-    }
 }
+
