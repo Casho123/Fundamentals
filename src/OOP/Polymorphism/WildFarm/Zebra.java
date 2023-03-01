@@ -1,18 +1,19 @@
 package OOP.Polymorphism.WildFarm;
 
-public class Mouse extends Mammal {
+public class Zebra extends Mammal {
 
     @Override
     public void makeSound() {
-        System.out.println("SQUEEEAAAK!");
+        System.out.println("Zs");
     }
 
     @Override
     public void eatFood(Food food) {
         if (food instanceof Meat) {
-            System.out.println("Mice are not eating that type of food!");
+            System.out.println("Zebras are not eating that type of food!");
         } else {
             super.setFoodEaten(food.getQuantity());
         }
+
     }
 }

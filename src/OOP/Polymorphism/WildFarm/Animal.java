@@ -30,4 +30,8 @@ public abstract class Animal {
     protected void eatFood(Food food) {
 
     }
+
+    public void setFoodEaten(Integer foodEaten) {
+        this.foodEaten = foodEaten;
+    }
 }
