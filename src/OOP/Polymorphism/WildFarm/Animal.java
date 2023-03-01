@@ -28,6 +28,7 @@ public abstract class Animal {
     }
 
     protected void eatFood(Food food) {
+        this.foodEaten += food.getQuantity();
 
     }
 

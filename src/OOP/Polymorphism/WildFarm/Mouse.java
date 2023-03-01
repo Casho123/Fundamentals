@@ -12,7 +12,7 @@ public class Mouse extends Mammal {
         if (food instanceof Meat) {
             System.out.println("Mice are not eating that type of food!");
         } else {
-            this.setFoodEaten(food.getQuantity());
+            this.setFoodEaten(food.getQuantity() + this.getFoodEaten());
         }
     }
 }
