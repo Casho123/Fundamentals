@@ -4,6 +4,10 @@ public class Tiger extends Feline {
 
     private String livingRegion;
 
+    public Tiger(String animalName, String animalType, Double animalWeight, String livingRegion) {
+        super(animalName, animalType, animalWeight, livingRegion);
+    }
+
     @Override
     public String getLivingRegion() {
         return livingRegion;

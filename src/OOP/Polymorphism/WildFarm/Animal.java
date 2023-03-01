@@ -7,6 +7,12 @@ public abstract class Animal {
     private Double animalWeight;
     private Integer foodEaten;
 
+    public Animal(String animalName, String animalType, Double animalWeight) {
+        this.animalName = animalName;
+        this.animalType = animalType;
+        this.animalWeight = animalWeight;
+        this.foodEaten = 0;
+    }
 
     public String getAnimalName() {
         return animalName;
