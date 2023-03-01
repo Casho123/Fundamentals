@@ -2,8 +2,9 @@ package OOP.Polymorphism.WildFarm;
 
 public class Zebra extends Mammal {
 
-    public Zebra(String animalName, String animalType, Double animalWeight, String livingRegion) {
-        super(animalName, animalType, animalWeight, livingRegion);
+
+    public Zebra(String animalName, Double animalWeight, String livingRegion) {
+        super(animalName, animalWeight, livingRegion);
     }
 
     @Override
@@ -12,7 +13,7 @@ public class Zebra extends Mammal {
     }
 
     @Override
-    public void eatFood(Food food) {
+    public void eat(Food food) {
         if (food instanceof Meat) {
             System.out.println("Zebras are not eating that type of food!");
         } else {

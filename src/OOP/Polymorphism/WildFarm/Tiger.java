@@ -2,15 +2,8 @@ package OOP.Polymorphism.WildFarm;
 
 public class Tiger extends Feline {
 
-    private String livingRegion;
-
-    public Tiger(String animalName, String animalType, Double animalWeight, String livingRegion) {
-        super(animalName, animalType, animalWeight, livingRegion);
-    }
-
-    @Override
-    public String getLivingRegion() {
-        return livingRegion;
+    public Tiger(String animalName, Double animalWeight, String livingRegion) {
+        super(animalName, animalWeight, livingRegion);
     }
 
     @Override
@@ -19,7 +12,7 @@ public class Tiger extends Feline {
     }
 
     @Override
-    public void eatFood(Food food) {
+    public void eat(Food food) {
         if (food instanceof Vegetable) {
             System.out.println("Tigers are not eating that type of food!");
         } else {

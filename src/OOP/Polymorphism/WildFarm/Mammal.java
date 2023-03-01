@@ -4,8 +4,8 @@ public abstract class Mammal extends Animal{
 
     private String livingRegion;
 
-    protected Mammal(String animalName, String animalType, Double animalWeight, String livingRegion) {
-        super(animalName, animalType, animalWeight);
+    public Mammal(String animalName, Double animalWeight, String livingRegion) {
+        super(animalName, animalWeight);
         this.livingRegion = livingRegion;
     }
 
