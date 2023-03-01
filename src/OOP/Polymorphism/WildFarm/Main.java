@@ -12,12 +12,20 @@ public class Main {
                 break;
             }
             String[] animalDetails = input.split("\\s+");
+            Animal animal;
+
             if (animalDetails.length == 5) {
+                String type = animalDetails[0];
+                String name = animalDetails[1];
+                Double weight = Double.parseDouble(animalDetails[2]);
+                String livingRegion = animalDetails[3];
+                String breed = animalDetails[4];
+                animal = new Cat(name, type, weight, livingRegion, breed);
+
+            } else {
 
             }
         }
-
-
 
 
     }
