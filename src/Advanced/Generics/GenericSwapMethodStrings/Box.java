@@ -20,7 +20,6 @@ public class Box<T> {
         this.values.set(index1, this.values.get(index2));
         this.values.set(index2, temp);
 
-        System.out.println();
     }
 
     @Override
